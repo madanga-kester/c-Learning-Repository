@@ -331,3 +331,127 @@ console.writeline(mydouble); // ouputs 6
 
 
 
+  
+
+
+
+
+
+night
+
+
+
+
+
+
+//type conversions
+//allows convertion of data from one type to anothother
+// 1. implicit conversions,
+// 2. explicit conversions
+
+
+
+// 1. implicit - occurs oautomaticaly when there is no risc of loosing data
+//Common Scenarios:
+int → long
+
+float → double
+
+char → int
+
+
+
+
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int num = 100;         // int (32-bit)
+        long bigNum = num;     // Implicit conversion to long (64-bit)
+
+        float rate = 12.5f;    // float (32-bit)
+        double preciserate = rate;  // Implicit conversion to double (64-bit)
+
+        char letter = 'A';
+        int ascii = letter;    // Implicit conversion from char to int
+
+        Console.WriteLine("Long value: " + bigNum);
+        Console.WriteLine("Double value: " + preciserate);
+        Console.WriteLine("ASCII value of 'A': " + ascii);
+    }
+}
+
+
+
+
+//explicit
+
+//Explicit conversion must be done manually using a cast because there's a risk of data loss or the conversion might fail at runtime. It’s used when converting between incompatible types or from a larger to a smaller data type.
+
+// Common Scenarios:
+double → int
+
+long → int
+
+object → specific type
+
+string → numeric type (using methods like int.Parse())
+
+
+
+
+
+//e.g
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        double preciseValue = 123.456;
+        int intValue = (int)preciseValue;  // Explicit conversion (data loss)
+
+        long bigNumber = 10000000000;
+        int smallNumber = (int)bigNumber;  // May overflow
+
+        string text = "50";
+        int number = int.Parse(text);      // Explicit conversion using Parse()
+
+        Console.WriteLine("After casting double to int: " + intValue);
+        Console.WriteLine("After casting long to int: " + smallNumber);
+        Console.WriteLine("Parsed string to int: " + number);
+    }
+}
+
+
+
+//output inakua 
+
+After casting double to int: 123
+After casting long to int: 1410065408
+Parsed string to int: 50
+
+
+
+
+
+double myDouble = 9.78;
+int myInt = (int)myDouble;    // Manual casting: double to int
+
+Console.WriteLine(myDouble);   // Outputs 9.78
+Console.WriteLine(myInt);      // Outputs 9
+
+
+
+
+
+
+Choose the right data type: Using the correct data type helps save memory and makes your program efficient.
+Use var when the type is obvious: It improves readability and makes the code cleaner.
+Avoid unnecessary type conversions: Converting data types too often can slow down performance.
+Use const or readonly for fixed values: These help prevent accidental changes to important values.
+Use decimal for money-related calculations: It provides more accuracy for financial transactions.
