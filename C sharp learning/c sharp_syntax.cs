@@ -136,3 +136,58 @@ namespace TestQuiz
         }
     }
 }
+
+
+/* Write a program that asks the user for a number.
+
+If the number is even, print "Even Number".
+
+Otherwise, print "Odd Number". */ 
+
+
+
+namespace EvenOdd
+{
+    class Calculations
+    {
+        static void Main(string[] args)
+        {
+
+            Console.Write(" Enter any Number")
+                int x = Convert.ToInt32(Console.ReadLine());
+            if (x == 0) { Console.WriteLine("Even Number")}
+            else
+            { Console.WriteLine("Odd Number")}
+        }
+    }
+
+}
+
+
+
+// sol 
+
+
+
+
+
+namespace EvenOdd
+{
+    class Calculations
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Enter any number: ");
+            int x = Convert.ToInt32(Console.ReadLine());
+
+            if (x % 2 == 0)
+            {
+                Console.WriteLine("Even Number");
+            }
+            else
+            {
+                Console.WriteLine("Odd Number");
+            }
+        }
+    }
+}
